@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { reset, addUser, remove } from "../Actions/type";
 import React, { useRef } from "react";
+import { Button } from "../style";
 
 const Form = () => {
   const users = useSelector((state) => state.userReducer);
@@ -21,7 +22,7 @@ const Form = () => {
         {users.map((user, index) => (
           <li key={index}>
             {user.name}
-            <button onClick={() => dispatch(remove(index))}>&times;</button>
+            <Button onClick={() => dispatch(remove(index))}>&times;</Button>
           </li>
         ))}
       </ul>
