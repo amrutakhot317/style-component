@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <>
-      <footer> All area is reserved </footer>
+      <footer> git hub All area is reserved </footer>
     </>
   );
 };
