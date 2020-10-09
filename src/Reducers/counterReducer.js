@@ -1,12 +1,12 @@
-import { INCREMENT, DECREMENT, RESET } from "../Constants/Action-Types";
+import actiontypes from "../Constants/Action-Types";
 
 const counterReducer = (state = 0, action) => {
   switch (action.type) {
-    case INCREMENT:
+    case actiontypes.INCREMENT:
       return state + 1;
-    case DECREMENT:
+    case actiontypes.DECREMENT:
       return state - 1;
-    case RESET:
+    case actiontypes.RESET:
       return 0;
     default:
       return state;

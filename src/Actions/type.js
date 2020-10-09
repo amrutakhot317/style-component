@@ -1,39 +1,33 @@
-import {
-  INCREMENT,
-  DECREMENT,
-  RESET,
-  ADD_USER,
-  REMOVE_USER,
-} from "../Constants/Action-Types";
+import actiontypes from "../Constants/Action-Types";
 
 export const increment = () => {
   return {
-    type: INCREMENT,
+    type: actiontypes.INCREMENT,
   };
 };
 
 export const decrement = () => {
   return {
-    type: DECREMENT,
+    type: actiontypes.DECREMENT,
   };
 };
 
 export const reset = () => {
   return {
-    type: RESET,
+    type: actiontypes.RESET,
   };
 };
 
 export const addUser = (data) => {
   return {
-    type: ADD_USER,
+    type: actiontypes.ADD_USER,
     payload: data,
   };
 };
 
 export const remove = (index) => {
   return {
-    type: REMOVE_USER,
+    type: actiontypes.REMOVE_USER,
     index,
   };
 };

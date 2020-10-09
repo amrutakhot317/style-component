@@ -1,4 +1,4 @@
-import { increment, decrement } from "../Actions//type";
+import { increment, decrement } from "../Actions/type";
 import { useSelector, useDispatch } from "react-redux";
 import React from "react";
 import styled from "styled-components";

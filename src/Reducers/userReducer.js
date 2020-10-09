@@ -1,11 +1,44 @@
-import { ADD_USER, REMOVE_USER } from "../Constants/Action-Types";
+import actiontypes from "../Constants/Action-Types";
 
-const userReducer = (state = [], action) => {
+const initialState = {
+  users: [],
+};
+
+const userReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_USER:
-      return [...state, { name: action.payload }];
-    case REMOVE_USER:
-      return state.filter((item, index) => action.index !== index);
+    case actiontypes.ADD_USER: {
+      const users = [...state.users];
+      console.log(users);
+      users.push(action.user);
+      return {
+        users,
+      };
+    }
+    case actiontypes.UPDATE_USER: {
+      const { index, user } = action;
+      const users = [...state.users];
+      users[index] = user;
+      return {
+        users,
+      };
+    }
+    case actiontypes.CONFIRM_USER: {
+      const { index, user } = action;
+      const users = [...state.users];
+      users[index] = user;
+      return {
+        users,
+      };
+    }
+
+    case actiontypes.REMOVE_USER: {
+      const { index } = action;
+      const users = [...state.users];
+      delete users[index];
+      return {
+        users,
+      };
+    }
     default:
       return state;
   }
